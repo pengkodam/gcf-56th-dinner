@@ -59,14 +59,14 @@ export default function Timeline() {
         <div className="absolute top-[calc(2rem+0.5rem)] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent pointer-events-none" />
 
         <div
-          className="flex gap-6 px-4 sm:px-8 pb-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+          className="flex gap-6 px-4 sm:px-8 pb-4 overflow-x-auto scrollbar-hide snap-x snap-proximity"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          <div className="flex-shrink-0 w-4 sm:w-8" />
+          <div className="flex-shrink-0 w-6 sm:w-10" />
           {timeline.map((item, i) => (
             <TimelineNode key={item.year} {...item} index={i} />
           ))}
-          <div className="flex-shrink-0 w-4 sm:w-8" />
+          <div className="flex-shrink-0 w-[22vw] sm:w-[14vw] min-w-[5rem]" />
         </div>
 
         <div className="flex justify-center mt-8 gap-3 items-center text-gold/65 text-[10px] tracking-[0.4em] uppercase">
