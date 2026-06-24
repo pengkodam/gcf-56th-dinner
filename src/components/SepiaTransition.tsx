@@ -2,87 +2,69 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function SepiaTransition() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0.6]);
-  const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
+  const wordOpacity = useTransform(scrollYProgress, [0.15, 0.4, 0.6, 0.85], [0, 1, 1, 0]);
+  const glowScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8]);
+
+  const part1 = "From a small gathering of graduates...".split(" ");
+  const part2 = "to a movement transforming a nation.".split(" ");
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-32 overflow-hidden bg-dark">
-      {/* Animated background gradient */}
-      <motion.div
-        style={{ opacity }}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-darker via-dark to-darker" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+    <section ref={ref} className="relative min-h-[120vh] flex items-center justify-center overflow-hidden bg-ink py-32">
+      {/* Pulsing radial glow */}
+      <motion.div style={{ scale: glowScale }} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[700px] h-[700px] bg-gold/5 rounded-full blur-[160px]" />
       </motion.div>
 
-      <motion.div style={{ y }} className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          {/* Decorative separator */}
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-gold/40" />
-            <div className="w-3 h-3 border border-gold/40 rotate-45" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-gold/40" />
-          </div>
+      {/* Top + bottom hairlines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
-          <p className="text-gold/60 text-sm tracking-[0.3em] uppercase font-body mb-6">
+      <motion.div style={{ y }} className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <motion.div style={{ opacity: wordOpacity }}>
+          <p className="text-gold/50 text-xs tracking-[0.4em] uppercase font-body mb-10">
             From Past to Present
           </p>
 
-          <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-8">
-            <span className="text-white/40">From a small gathering of graduates...</span>
+          <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] mb-10 text-balance">
+            {part1.map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="inline-block text-white/35 mr-3"
+              >
+                {word}
+              </motion.span>
+            ))}
             <br />
-            <span className="text-gold">to a movement transforming a nation.</span>
+            {part2.map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
+                className={`inline-block mr-3 ${word === "nation." ? "foil-text" : "text-white"}`}
+              >
+                {word}
+              </motion.span>
+            ))}
           </h2>
 
-          <p className="text-white/50 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-white/40 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
             What began in 1969 as an informal fellowship for Christian graduates has grown into a
             vibrant community impacting thousands across Malaysia — in the marketplace, in society,
             and for the glory of Christ.
           </p>
-
-          {/* Photo placeholders */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`glass-card aspect-square flex items-center justify-center ${
-                  i <= 3 ? "sepia" : ""
-                }`}
-              >
-                <span className="text-gold/30 text-xs font-body">
-                  {i <= 3 ? "Historical Photo" : "Recent Photo"}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="mt-6 text-gold/40 text-xs italic">
-            Photo placeholders — replace with actual GCF images
-          </p>
-
-          {/* Decorative separator */}
-          <div className="flex items-center justify-center gap-4 mt-12">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-gold/40" />
-            <div className="w-3 h-3 border border-gold/40 rotate-45" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-gold/40" />
-          </div>
         </motion.div>
       </motion.div>
     </section>

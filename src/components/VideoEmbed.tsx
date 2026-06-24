@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import SectionDivider from "./SectionDivider";
 import { VIDEOS } from "../data/constants";
 
 function VideoCard({ url, title, description, index }: {
@@ -10,14 +10,13 @@ function VideoCard({ url, title, description, index }: {
   index: number;
 }) {
   return (
-    <ScrollReveal delay={index * 0.15}>
+    <ScrollReveal delay={index * 0.12}>
       <motion.div
         whileHover={{ y: -4 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="glass-card overflow-hidden group"
       >
-        {/* Video embed */}
-        <div className="relative aspect-video">
+        <div className="relative aspect-video overflow-hidden">
           <iframe
             src={url}
             title={title}
@@ -27,12 +26,11 @@ function VideoCard({ url, title, description, index }: {
           />
         </div>
 
-        {/* Info */}
-        <div className="p-5">
+        <div className="p-6">
           <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-gold transition-colors">
             {title}
           </h3>
-          <p className="text-white/50 text-sm leading-relaxed">{description}</p>
+          <p className="text-white/45 text-sm leading-relaxed">{description}</p>
         </div>
       </motion.div>
     </ScrollReveal>
@@ -41,18 +39,18 @@ function VideoCard({ url, title, description, index }: {
 
 export default function VideoEmbed() {
   return (
-    <section className="relative py-20 sm:py-28 bg-gradient-to-b from-darker to-dark">
+    <section className="relative py-24 sm:py-32 bg-gradient-to-b from-ink to-darkest">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <p className="text-center text-gold/70 text-sm tracking-[0.3em] uppercase font-body mb-3">
-            Watch
-          </p>
-          <h2 className="text-center font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            GCF in <span className="text-gold">Action</span>
-          </h2>
-          <p className="text-center text-white/50 max-w-xl mx-auto mb-14 text-sm sm:text-base">
-            See how God is working through GCF Malaysia today.
-          </p>
+          <div className="text-center mb-16">
+            <SectionDivider label="Watch" />
+            <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              GCF in <span className="foil-text">Action</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+              See how God is working through GCF Malaysia today.
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -60,13 +58,6 @@ export default function VideoEmbed() {
             <VideoCard key={video.title} {...video} index={i} />
           ))}
         </div>
-
-        {/* Placeholder note */}
-        <ScrollReveal delay={0.3}>
-          <p className="text-center text-gold/30 text-xs mt-8 italic">
-            Video placeholders — replace with actual GCF YouTube URLs
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   );

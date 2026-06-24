@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import SectionDivider from "./SectionDivider";
 import { testimonials } from "../data/testimonials";
 
 function TestimonialCard({ name, role, quote, era, index }: {
@@ -18,7 +19,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      transition={{ duration: 0.7, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="perspective-1000"
     >
       <div
@@ -28,39 +29,39 @@ function TestimonialCard({ name, role, quote, era, index }: {
       >
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full h-full"
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Front */}
           <div
-            className="absolute inset-0 glass-card p-6 flex flex-col justify-between"
+            className="absolute inset-0 glass-card p-7 flex flex-col justify-between"
             style={{ backfaceVisibility: "hidden" }}
           >
             <div>
-              <Quote className="text-gold/40 mb-3" size={28} />
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed italic line-clamp-5">
+              <Quote className="text-gold/40 mb-4" size={26} />
+              <p className="text-white/65 text-sm sm:text-base leading-relaxed italic line-clamp-5">
                 "{quote}"
               </p>
             </div>
             <div className="border-t border-gold/10 pt-3">
               <p className="text-gold font-display font-semibold text-sm">{name}</p>
-              <p className="text-white/40 text-xs">{role}</p>
+              <p className="text-white/35 text-xs">{role}</p>
             </div>
           </div>
 
           {/* Back */}
           <div
-            className="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center gold-glow"
+            className="absolute inset-0 glass-card gold-glow p-7 flex flex-col items-center justify-center"
             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
           >
-            <div className="text-5xl font-display font-bold text-gold/20 mb-4">
+            <div className="editorial-num text-6xl font-bold foil-text mb-4">
               {era}
             </div>
-            <p className="text-white/60 text-sm text-center">
+            <p className="text-white/55 text-sm text-center font-light">
               A generation of faithfulness
             </p>
-            <p className="text-gold/50 text-xs mt-4">Tap to flip back</p>
+            <p className="text-gold/40 text-[10px] tracking-[0.3em] uppercase mt-5">Tap to flip back</p>
           </div>
         </motion.div>
       </div>
@@ -70,18 +71,18 @@ function TestimonialCard({ name, role, quote, era, index }: {
 
 export default function Testimonials() {
   return (
-    <section className="relative py-20 sm:py-28 bg-gradient-to-b from-darker to-dark">
+    <section className="relative py-24 sm:py-32 bg-gradient-to-b from-darkest to-ink">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <p className="text-center text-gold/70 text-sm tracking-[0.3em] uppercase font-body mb-3">
-            Voices of GCF
-          </p>
-          <h2 className="text-center font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            What GCF Means to <span className="text-gold">Us</span>
-          </h2>
-          <p className="text-center text-white/50 max-w-xl mx-auto mb-14 text-sm sm:text-base">
-            Tap a card to reveal the era. Real testimonials to be added.
-          </p>
+          <div className="text-center mb-16">
+            <SectionDivider label="Voices of GCF" />
+            <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              What GCF Means to <span className="foil-text">Us</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+              Tap a card to reveal the era. Real testimonials to be added.
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
