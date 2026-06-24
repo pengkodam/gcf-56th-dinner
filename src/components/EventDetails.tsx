@@ -1,7 +1,8 @@
-import { Calendar, Clock, MapPin, Shirt, Car } from "lucide-react";
+import { Calendar, Clock, MapPin, Shirt, Car, CalendarPlus } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 import { EVENT, TICKETS } from "../data/constants";
+import { googleCalendarUrl, downloadICS } from "../lib/eventLinks";
 
 const details = [
   { icon: Calendar, label: "Date", value: EVENT.date },
@@ -23,9 +24,31 @@ export default function EventDetails() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               Event <span className="foil-text">Details</span>
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto mt-6 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-white/70 max-w-2xl mx-auto mt-6 text-sm sm:text-base leading-relaxed font-light">
               {EVENT.messaging}
             </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Add to Calendar */}
+        <ScrollReveal className="flex justify-center mb-12">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={googleCalendarUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-gold to-gold-dark text-ink hover:shadow-lg hover:shadow-gold/30 transition-all duration-300"
+            >
+              <CalendarPlus size={15} />
+              Add to Google Calendar
+            </a>
+            <button
+              onClick={downloadICS}
+              className="inline-flex items-center gap-2 px-6 py-3 text-xs font-semibold tracking-widest uppercase border border-gold/40 text-gold hover:bg-gold/10 transition-all duration-300"
+            >
+              <CalendarPlus size={15} />
+              Apple / Outlook (.ics)
+            </button>
           </div>
         </ScrollReveal>
 
@@ -44,7 +67,7 @@ export default function EventDetails() {
                     <item.icon className="text-gold" size={20} />
                   </div>
                   <div>
-                    <p className="text-gold/50 text-[10px] uppercase tracking-[0.3em] mb-2">
+                    <p className="text-gold/70 text-[10px] uppercase tracking-[0.3em] mb-2">
                       {item.label}
                     </p>
                     {item.link ? (
@@ -52,7 +75,7 @@ export default function EventDetails() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white group-hover:text-gold transition-colors font-display text-lg leading-snug underline decoration-gold/20 underline-offset-4 hover:decoration-gold"
+                        className="text-white group-hover:text-gold transition-colors font-display text-lg leading-snug underline decoration-gold/30 underline-offset-4 hover:decoration-gold"
                       >
                         {item.value}
                       </a>
@@ -76,18 +99,18 @@ export default function EventDetails() {
               <div className="grid grid-cols-3 gap-4 items-end">
                 <div>
                   <p className="editorial-num foil-text text-3xl sm:text-4xl font-bold">100</p>
-                  <p className="text-white/40 text-[10px] tracking-widest uppercase mt-1">RM / Person</p>
+                  <p className="text-white/65 text-[10px] tracking-widest uppercase mt-1">RM / Person</p>
                 </div>
                 <div>
                   <p className="editorial-num foil-text text-3xl sm:text-4xl font-bold">1,000</p>
-                  <p className="text-white/40 text-[10px] tracking-widest uppercase mt-1">RM / Table</p>
+                  <p className="text-white/65 text-[10px] tracking-widest uppercase mt-1">RM / Table</p>
                 </div>
                 <div>
                   <p className="editorial-num foil-text text-3xl sm:text-4xl font-bold">60</p>
-                  <p className="text-white/40 text-[10px] tracking-widest uppercase mt-1">RM / Under 30</p>
+                  <p className="text-white/65 text-[10px] tracking-widest uppercase mt-1">RM / Under 30</p>
                 </div>
               </div>
-              <p className="text-gold/40 text-xs mt-6 italic">{TICKETS.kidsFree}</p>
+              <p className="text-gold/70 text-xs mt-6 italic">{TICKETS.kidsFree}</p>
             </div>
           </ScrollReveal>
         </div>

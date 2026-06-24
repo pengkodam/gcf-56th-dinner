@@ -46,7 +46,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
             </div>
             <div className="border-t border-gold/10 pt-3">
               <p className="text-gold font-display font-semibold text-sm">{name}</p>
-              <p className="text-white/35 text-xs">{role}</p>
+                <p className="text-white/65 text-xs">{role}</p>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
             <p className="text-white/55 text-sm text-center font-light">
               A generation of faithfulness
             </p>
-            <p className="text-gold/40 text-[10px] tracking-[0.3em] uppercase mt-5">Tap to flip back</p>
+            <p className="text-gold/65 text-[10px] tracking-[0.3em] uppercase mt-5">Tap to flip back</p>
           </div>
         </motion.div>
       </div>
@@ -79,7 +79,7 @@ export default function Testimonials() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               What GCF Means to <span className="foil-text">Us</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+            <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
               Tap a card to reveal the era. Real testimonials to be added.
             </p>
           </div>

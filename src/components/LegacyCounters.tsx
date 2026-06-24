@@ -35,7 +35,7 @@ function StatFigure({ value, suffix, label }: { value: number; suffix: string; l
         {count.toLocaleString()}
         <span className="text-gold-light text-4xl sm:text-5xl align-top">{suffix}</span>
       </div>
-      <p className="text-white/40 text-xs sm:text-sm tracking-[0.3em] uppercase font-body">
+      <p className="text-white/65 text-xs sm:text-sm tracking-[0.3em] uppercase font-body">
         {label}
       </p>
     </div>

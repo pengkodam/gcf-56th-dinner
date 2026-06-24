@@ -22,7 +22,7 @@ export default function PhotoGallery() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               GCF <span className="foil-text">Gallery</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+            <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
               Moments captured across 56 years of fellowship, ministry, and community.
             </p>
           </div>

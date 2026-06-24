@@ -32,7 +32,7 @@ export default function LoveGift() {
             Your generous love gift helps GCF Malaysia continue its ministry of equipping Christian
             graduates to impact the marketplace for the glory of Christ.
           </p>
-          <p className="text-white/35 text-sm mb-10 max-w-lg mx-auto">
+          <p className="text-white/65 text-sm mb-10 max-w-lg mx-auto">
             All proceeds go directly towards GCF Malaysia Ministries — including iBridge, Impact,
             and Nation-Building programmes.
           </p>

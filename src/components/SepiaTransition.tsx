@@ -28,7 +28,7 @@ export default function SepiaTransition() {
 
       <motion.div style={{ y }} className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div style={{ opacity: wordOpacity }}>
-          <p className="text-gold/50 text-xs tracking-[0.4em] uppercase font-body mb-10">
+          <p className="text-gold/75 text-xs tracking-[0.4em] uppercase font-body mb-10">
             From Past to Present
           </p>
 
@@ -60,7 +60,7 @@ export default function SepiaTransition() {
             ))}
           </h2>
 
-          <p className="text-white/40 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-white/65 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
             What began in 1969 as an informal fellowship for Christian graduates has grown into a
             vibrant community impacting thousands across Malaysia — in the marketplace, in society,
             and for the glory of Christ.

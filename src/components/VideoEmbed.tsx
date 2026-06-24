@@ -30,7 +30,7 @@ function VideoCard({ url, title, description, index }: {
           <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-gold transition-colors">
             {title}
           </h3>
-          <p className="text-white/45 text-sm leading-relaxed">{description}</p>
+          <p className="text-white/65 text-sm leading-relaxed">{description}</p>
         </div>
       </motion.div>
     </ScrollReveal>
@@ -47,7 +47,7 @@ export default function VideoEmbed() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               GCF in <span className="foil-text">Action</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+            <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
               See how God is working through GCF Malaysia today.
             </p>
           </div>

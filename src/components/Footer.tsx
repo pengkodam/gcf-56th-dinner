@@ -21,12 +21,12 @@ export default function Footer() {
 
         <div className="text-center space-y-3">
           <p className="font-display text-lg font-bold foil-text">{GCF.fullName}</p>
-          <p className="text-white/40 text-sm max-w-md mx-auto leading-relaxed">{GCF.address}</p>
+          <p className="text-white/70 text-sm max-w-md mx-auto leading-relaxed">{GCF.address}</p>
           <a
             href={SOCIAL.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold/60 hover:text-gold text-sm transition-colors"
+            className="text-gold/85 hover:text-gold text-sm transition-colors"
           >
             gcfmalaysia.org
           </a>

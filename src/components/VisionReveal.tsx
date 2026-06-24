@@ -37,7 +37,7 @@ export default function VisionReveal() {
         </div>
 
         <ScrollReveal delay={0.8}>
-          <p className="mt-10 text-white/40 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mt-10 text-white/65 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
             Since 1969, GCF has been mobilizing Christian graduates to live out their faith in
             the marketplace — where the daily business and economics of life take place.
           </p>

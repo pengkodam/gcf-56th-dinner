@@ -22,7 +22,7 @@ export default function MinistryPillars() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               Building the <span className="foil-text">Future</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+            <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
               Three pillars of ministry equipping Christians to transform society.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function MinistryPillars() {
                   <h3 className="font-display text-2xl font-bold text-white group-hover:text-gold transition-colors mb-3">
                     {ministry.name}
                   </h3>
-                  <p className="text-white/45 text-sm leading-relaxed">
+                  <p className="text-white/65 text-sm leading-relaxed">
                     {ministry.description}
                   </p>
                   <div className="mt-6 h-px w-0 bg-gradient-to-r from-gold to-transparent group-hover:w-full transition-all duration-700" />

@@ -9,7 +9,7 @@ export const EVENT = {
   date: "Saturday, 15 August 2026",
   time: "6:00 PM – 9:00 PM",
   venue: "Happiness Banquet Restaurant, Subang",
-  venueMapsUrl: "https://www.google.com/maps/search/Happiness+Banquet+Restaurant+Subang",
+  venueMapsUrl: "https://maps.app.goo.gl/yx1DZ3z5TXCezWqM7",
   dressCode: "Smart Casual",
   parking: "Plenty of parking available",
   messaging:
@@ -27,7 +27,7 @@ export const CONTACTS = {
   primary: { name: "Jimmy Lee", phone: "019-2214199" },
   secondary: { name: "Celina", phone: "012-2919510" },
   email: "gcf.msia@gmail.com",
-  shortlink: "https://tinyurl.com/GCF56thDinner",
+  shortlink: "https://tinyurl.com/GCF-56th-Dinner",
 };
 
 export const DONATION = {

@@ -29,7 +29,7 @@ function TimelineNode({ year, title, description, index }: {
         <h3 className="font-display text-lg font-semibold text-white mb-3 group-hover:text-gold transition-colors">
           {title}
         </h3>
-        <p className="text-white/45 text-sm leading-relaxed">{description}</p>
+        <p className="text-white/65 text-sm leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );
@@ -47,7 +47,7 @@ export default function Timeline() {
             <h2 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               Honoring the <span className="foil-text">Past</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
+            <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
               56 years of God's faithfulness — a journey of fellowship, ministry, and transformation.
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function Timeline() {
           <div className="flex-shrink-0 w-4 sm:w-8" />
         </div>
 
-        <div className="flex justify-center mt-8 gap-3 items-center text-gold/40 text-[10px] tracking-[0.4em] uppercase">
+        <div className="flex justify-center mt-8 gap-3 items-center text-gold/65 text-[10px] tracking-[0.4em] uppercase">
           <span>←</span>
           <span>Scroll to explore</span>
           <span>→</span>

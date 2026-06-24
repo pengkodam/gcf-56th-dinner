@@ -13,7 +13,7 @@ export default function YourStory() {
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <ScrollReveal>
-          <p className="text-gold/50 text-xs tracking-[0.4em] uppercase font-body mb-6">
+          <p className="text-gold/75 text-xs tracking-[0.4em] uppercase font-body mb-6">
             The Next Chapter
           </p>
         </ScrollReveal>
@@ -26,7 +26,7 @@ export default function YourStory() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>
-          <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-12 max-w-xl mx-auto font-light">
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-12 max-w-xl mx-auto font-light">
             Whether you're a fresh graduate, a seasoned professional, or somewhere in between —
             there's a place for you in GCF. Come write the next chapter with us.
           </p>
