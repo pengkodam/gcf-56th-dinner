@@ -1,0 +1,63 @@
+Requirements
+
+[13:49, 23/06/2026] Chan Ying Qian GCF: 1. The "Why" (Fundraising Goals & Success Metrics)What is the target fundraising goal for this specific event? 
+Fellowship,  fund raising ,  my personal target 30-45 tables
+A bridge of young and older generation
+
+How will donations be tracked on the site? (e.g., Are we showing a real-time progress bar or donation thermometer?)
+Registration through jimmy and phone call,  tabulate by excel file
+
+What are the primary KPIs? (e.g., Number of tickets sold, average donation size, total revenue raised, recurring donor sign-ups). 300-450 attendees ,  donation based on attendees’s calling from God.  We will have fill up form for attendee to tick ways of support
+
+What is the core narrative or cause that the website needs to communicate to drive emotional engagement? Engage the youngster,  attraxt the gen z gen millennium,  and zen 2010
+
+ 2. The "Who" (Donor & Guest Personas)Who are the distinct user groups accessing this site?
+Examples: High-net-worth VIP donors, corporate sponsors, individual ticket buyers, event organizers/admins, or table hosts.  old people , young people,  christian community,  churches and christian org , christian ngo, peopel who bleseed by GCF In the old  days 
+
+What are their technical skill levels? (e.g., Do we need an ultra-simplified checkout for older donors?)What do different personas need to see?   Simpel website will do, just inform
+Them the dinner and they can register onsite or call us
+
+(e.g., Do corporate sponsors need a dedicated portal to upload their logos for marketing materials?) 
+NO
+
+1. The "What" (Ticketing & Donation Workflows)How do users purchase tickets or tables?  By google form,  and by word of mounth contacting jimmy 
+2. ⁠Can a "Table Host" buy a table of 10 and assign/invite guests later via email?   Can
+3. ⁠Is there a way to make a direct donation if a user cannot attend the physical event?   Can,  we have donation account number details in the whatsapp messge 
+4. ⁠What information must be collected during checkout? (e.g., Meal preferences, dietary restrictions, accessibility needs, guest names).
+Number of table / number of attendee/  number of kids and children  attending
+How are corporate sponsorship tiers handled? (e.g., Tiered pricing like Gold, Silver, Bronze packages with automated perks).
+1000 per tables 
+
+4.  The "How" (Integrations & Security)Which payment gateway will we use to process donations securely? (e.g., Stripe, PayPal, or specialized non-profit platforms like Donorbox or Classy).
+Bank transfer 
+
+How will tax-deductible donation receipts be generated and sent? (Does the website automate this, or does it push data to a CRM?)
+Lina will do it hahahaa
+
+What third-party tools must this website integrate with? (e.g., Salesforce, HubSpot, Eventbrite, or email tools like Mailchimp). I think jimmy will handle the  information
+
+Does the site need to host a digital auction, raffle, or live bidding portal?
+Not this round haha1
+
+. Event Logistics & Information ArchitectureWhat critical event details must be prominently displayed? (e.g., Date, time, venue address, dress code, parking/valet information, itinerary).
+Dare time venue address  smart casual,  plenty of parking ,  programme pdf file will be issues
+
+Do we need an interactive seating chart tool for admins or table hosts?
+Jimmy saya he can areange the table
+
+Is there a post-event requirement? (e.g., Displaying a photo gallery, thanking sponsors, publishing a final fundraising report).
+Thank you card to all the attendees,  upcoming programme information from gcf.  And open door for future coloboration from different Christian organisations  with us,  open more door for future programmes 
+
+1. ⁠1. Boundaries & Launch Timelines (Out-of-Scope)What features are out of scope for the initial launch? (e.g., "We will not build an in-house bidding system; we will link out to a third-party auction site instead").
+No
+
+What is the absolute hard deadline for the website to go live to allow a proper marketing window before the dinner?
+I think we cna use the website to showcase our attractive programme:)
+
+How will the website change after the event concludes? (e.g., Does it automatically shift to a "Thank You" landing page?)  we attach link to gcf websitr
+
+To help tailor this, do you plan to use third-party event tools (like Eventbrite or a specific non-profit CRM) that the website needs to connect to, or should the site handle everything natively?
+Maybe not this round
+[13:51, 23/06/2026] Chan Ying Qian GCF: Also a fellowship and its like a report of what gcf had done , what we contributed to christian community, whay we doing  currently and our future planning 
+
+Can touch a bit of history,  but more to what we achieved and do currently,  and what is our future vision of GCF
