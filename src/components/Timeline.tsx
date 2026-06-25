@@ -1,37 +1,42 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 import { timeline } from "../data/timeline";
 
-function TimelineNode({ year, title, description, index }: {
+function TimelineItem({ year, title, description, index }: {
   year: number;
   title: string;
   description: string;
   index: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-      className="flex-shrink-0 w-72 sm:w-80 group"
-    >
-      <div className="glass-card p-7 h-full transition-all duration-500 group-hover:gold-glow">
-        <div className="flex items-baseline gap-3 mb-4">
-          <span className="editorial-num foil-text text-4xl font-bold">{year}</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-gold/40 to-transparent" />
-        </div>
-        <h3 className="font-display text-lg font-semibold text-white mb-3 group-hover:text-gold transition-colors">
-          {title}
-        </h3>
-        <p className="text-white/65 text-sm leading-relaxed">{description}</p>
-      </div>
-    </motion.div>
+    <li className="relative pl-16 sm:pl-24">
+      {/* Node centered on the rail */}
+      <span className="absolute left-8 -translate-x-1/2 top-1.5 z-10 flex items-center justify-center">
+        <span className="w-3 h-3 border border-gold/60 rotate-45 bg-ink" />
+      </span>
+
+      <ScrollReveal delay={index * 0.08}>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="glass-card p-6 sm:p-7"
+        >
+          <div className="flex items-baseline gap-4 mb-3">
+            <span className="editorial-num foil-text text-3xl sm:text-4xl font-bold leading-none">
+              {year}
+            </span>
+            <div className="flex-1 h-px bg-gradient-to-r from-gold/40 to-transparent" />
+          </div>
+          <h3 className="font-display text-lg font-semibold text-white mb-2">
+            {title}
+          </h3>
+          <p className="text-white/65 text-sm leading-relaxed">{description}</p>
+        </motion.div>
+      </ScrollReveal>
+    </li>
   );
 }
 
@@ -40,7 +45,7 @@ export default function Timeline() {
     <section id="past" className="relative py-24 sm:py-32 bg-darkest overflow-hidden">
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gold/4 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
         <ScrollReveal>
           <div className="text-center">
             <SectionDivider label="Our Journey" />
@@ -54,26 +59,16 @@ export default function Timeline() {
         </ScrollReveal>
       </div>
 
-      {/* Horizontal scrollable timeline */}
-      <div className="relative">
-        <div className="absolute top-[calc(2rem+0.5rem)] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent pointer-events-none" />
+      {/* Vertical timeline */}
+      <div className="relative max-w-2xl mx-auto px-4 sm:px-8">
+        {/* Rail */}
+        <div className="absolute left-8 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
 
-        <div
-          className="flex gap-6 px-4 sm:px-8 pb-4 overflow-x-auto scrollbar-hide snap-x snap-proximity"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          <div className="flex-shrink-0 w-6 sm:w-10" />
+        <ol className="space-y-8 sm:space-y-10">
           {timeline.map((item, i) => (
-            <TimelineNode key={item.year} {...item} index={i} />
+            <TimelineItem key={item.year} {...item} index={i} />
           ))}
-          <div className="flex-shrink-0 w-[22vw] sm:w-[14vw] min-w-[5rem]" />
-        </div>
-
-        <div className="flex justify-center mt-8 gap-3 items-center text-gold/65 text-[10px] tracking-[0.4em] uppercase">
-          <span>←</span>
-          <span>Scroll to explore</span>
-          <span>→</span>
-        </div>
+        </ol>
       </div>
     </section>
   );
