@@ -110,13 +110,13 @@ export const GALLERY_IMAGES = [
 
 export const VIDEOS = [
   {
-    url: "https://www.youtube.com/embed/2MhU3xWnvaU",
-    title: "GCF Malaysia — Our Story",
-    description: "A glimpse into 56 years of God's faithfulness through GCF.",
-  },
-  {
     url: "https://www.youtube.com/embed/QYQeVezYRQ0",
     title: "Impact Ministry Highlights",
     description: "How GCF is transforming the marketplace for Christ.",
+  },
+  {
+    url: "https://www.youtube.com/embed/2MhU3xWnvaU",
+    title: "GCF Malaysia — Our Story",
+    description: "A glimpse into 56 years of God's faithfulness through GCF.",
   },
 ];
