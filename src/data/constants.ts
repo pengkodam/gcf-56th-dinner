@@ -21,6 +21,7 @@ export const TICKETS = {
   table: { label: "Table of 10", price: 1000, unit: "per table" },
   youngAdult: { label: "Young Adult", price: 60, unit: "per person (below 30)" },
   kidsFree: "Kids below 8 eat for free",
+  buyUrl: "https://www.tinyurl.com/GCF56thDinner",
 };
 
 export const CONTACTS = {

@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, Shirt, Car, CalendarPlus } from "lucide-react";
+import { Calendar, Clock, MapPin, Shirt, Car, CalendarPlus, Ticket } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 import { EVENT, TICKETS } from "../data/constants";
@@ -111,6 +111,16 @@ export default function EventDetails() {
                 </div>
               </div>
               <p className="text-gold/70 text-xs mt-6 italic">{TICKETS.kidsFree}</p>
+              <a
+                href={TICKETS.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative mt-8 w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-widest uppercase bg-gradient-to-r from-gold to-gold-dark text-ink overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
+              >
+                <Ticket size={16} className="relative z-10" />
+                <span className="relative z-10">Buy Tickets</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </a>
             </div>
           </ScrollReveal>
         </div>
