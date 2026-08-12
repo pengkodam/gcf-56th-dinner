@@ -24,7 +24,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
     >
       <div
         onClick={() => setFlipped(!flipped)}
-        className="relative cursor-pointer h-64 sm:h-72"
+        className="relative cursor-pointer h-64 sm:h-72 overflow-visible"
       >
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
@@ -70,7 +70,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 sm:py-32 bg-gradient-to-b from-darkest to-ink z-10">
+    <section className="relative py-24 sm:py-32 bg-gradient-to-b from-darkest to-ink z-20 overflow-visible">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
