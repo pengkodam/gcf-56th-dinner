@@ -20,11 +20,11 @@ function TestimonialCard({ name, role, quote, era, index }: {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-      className="perspective-1000"
     >
       <div
         onClick={() => setFlipped(!flipped)}
-        className="relative cursor-pointer h-64 sm:h-72 overflow-visible"
+        className="relative cursor-pointer h-64 sm:h-72"
+        style={{ perspective: "1000px" }}
       >
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
