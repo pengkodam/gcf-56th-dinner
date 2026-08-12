@@ -24,8 +24,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
     >
       <div
         onClick={() => setFlipped(!flipped)}
-        className="relative cursor-pointer h-64 sm:h-72"
-        style={{ perspective: "1000px" }}
+        className="relative cursor-pointer h-64 sm:h-72 overflow-hidden"
       >
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
@@ -80,7 +79,7 @@ export default function Testimonials() {
               What GCF Means to <span className="foil-text">Us</span>
             </h2>
             <p className="text-white/70 max-w-xl mx-auto mt-6 text-sm sm:text-base font-light">
-              Tap a card to reveal the era. Real testimonials to be added.
+              Tap a card to reveal the era. Anecdotal and overheard
             </p>
           </div>
         </ScrollReveal>
