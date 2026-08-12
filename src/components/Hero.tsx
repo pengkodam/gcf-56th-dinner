@@ -17,7 +17,7 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ink">
+    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ink pt-20">
       <GoldParticles />
 
       {/* Parallax background layer */}
