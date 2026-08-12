@@ -3,6 +3,7 @@ export interface Testimonial {
   role: string;
   quote: string;
   era: string;
+  subtitle: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -12,6 +13,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "GCF shaped my understanding of what it means to be a Christian professional. The friendships and mentorship I received have lasted a lifetime.",
     era: "1970s",
+    subtitle: "A pioneering generation",
   },
   {
     name: "",
@@ -19,6 +21,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Through GCF, I learned that my faith and my career are not separate — they are one integrated calling. That changed everything for me.",
     era: "1990s",
+    subtitle: "An establishing generation",
   },
   {
     name: "",
@@ -26,5 +29,6 @@ export const testimonials: Testimonial[] = [
     quote:
       "As a young graduate, GCF gave me a community that understood the challenges of living out faith in the real world. I found my tribe.",
     era: "2020s",
+    subtitle: "A generation of faithfulness",
   },
 ];

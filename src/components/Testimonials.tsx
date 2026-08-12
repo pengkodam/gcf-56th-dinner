@@ -5,11 +5,12 @@ import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 import { testimonials } from "../data/testimonials";
 
-function TestimonialCard({ name, role, quote, era, index }: {
+function TestimonialCard({ name, role, quote, era, subtitle, index }: {
   name: string;
   role: string;
   quote: string;
   era: string;
+  subtitle: string;
   index: number;
 }) {
   const [flipped, setFlipped] = useState(false);
@@ -58,7 +59,7 @@ function TestimonialCard({ name, role, quote, era, index }: {
               {era}
             </div>
             <p className="text-white/55 text-sm text-center font-light">
-              A generation of faithfulness
+              {subtitle}
             </p>
             <p className="text-gold/65 text-[10px] tracking-[0.3em] uppercase mt-5">Tap to flip back</p>
           </div>
