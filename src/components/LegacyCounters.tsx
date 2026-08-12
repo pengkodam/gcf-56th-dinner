@@ -31,11 +31,11 @@ function StatFigure({ value, suffix, label }: { value: number; suffix: string; l
 
   return (
     <div ref={ref} className="group">
-      <div className="editorial-num foil-text text-6xl sm:text-7xl lg:text-8xl font-bold leading-none mb-3 gold-glow-text">
+      <div className="editorial-num foil-text text-6xl sm:text-7xl lg:text-8xl font-bold leading-none mb-4 gold-glow-text">
         {count.toLocaleString()}
         <span className="text-gold-light text-4xl sm:text-5xl align-top">{suffix}</span>
       </div>
-      <p className="text-white/65 text-xs sm:text-sm tracking-[0.3em] uppercase font-body">
+      <p className="text-white/65 text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase font-body leading-relaxed">
         {label}
       </p>
     </div>
@@ -64,7 +64,7 @@ export default function LegacyCounters() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8">
           {counters.map((c, i) => (
             <motion.div
               key={c.label}
